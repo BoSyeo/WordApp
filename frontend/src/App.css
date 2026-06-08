@@ -258,7 +258,11 @@ textarea {
 .modeButtons {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+}
+
+.modeButtons button {
+  flex: 1;
+  min-width: 0;
 }
 
 .studyNavButtons {
