@@ -1,0 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 36px;
+  position: sticky;
+  top: 0;
+}
+
+.header h1 {
+  margin-right: auto;
+  cursor: pointer;
+  color: #3b5bdb;
+}
+
+.header button,
+.primaryBtn,
+.backBtn,
+.quizCard button {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header button {
+  background: #eef2ff;
+  color: #3b5bdb;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.page h2 {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.sub {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+}
+
+.panel {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  margin-top: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.primaryBtn {
+  background: #3b5bdb;
+  color: white;
+}
+
+.backBtn {
+  background: #e9ecef;
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wordList {
+  margin-top: 16px;
+}
+
+.wordItem {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.quizPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quizCard {
+  background: white;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  padding: 38px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.quizCard h1 {
+  font-size: 48px;
+  color: #3b5bdb;
+}
+
+.quizCard input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.correct,
+.wrong {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: bold;
+}
+
+.correct {
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+
+.wrong {
+  background: #ffe3e3;
+  color: #c92a2a;
+}
+
+.correct button,
+.wrong button {
+  display: block;
+  margin: 14px auto 0;
+  background: white;
+}
+
+.textInput {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.smallDangerBtn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #ffe3e3;
+  color: #c92a2a;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.smallDangerBtn:hover {
+  background: #ffc9c9;
+}
+
+.smallInput {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.smallSaveBtn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: #dbe4ff;
+  color: #364fc7;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.smallSaveBtn:hover {
+  background: #bac8ff;
+}
+
+.smallSaveBtn {
+  margin-right: 18px;
+}
+
+.choiceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.choiceButton {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.choiceButton:hover {
+  background: #f1f3f5;
+}
+
+.modeButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.studyNavButtons {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 20px;
+}
+
+.historyItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: #f8f9fa;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.historyInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6fb;
+}
+
+.loginBox {
+  width: 360px;
+  background: white;
+  padding: 34px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.loginBox input {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.linkBtn {
+  border: none;
+  background: none;
+  color: #3b5bdb;
+  cursor: pointer;
+  font-weight: bold;
+}
