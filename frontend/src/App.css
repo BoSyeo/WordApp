@@ -371,3 +371,16 @@ textarea {
     color: #666;
   }
 }
+
+@media (max-width: 480px) {
+  .modeButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modeButtons .primaryBtn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
