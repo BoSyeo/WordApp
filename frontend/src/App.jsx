@@ -63,7 +63,7 @@ function App() {
   };
 
   const loadWordSets = () => {
-    fetch("${API_URL}/api/wordsets")
+    fetch(`${API_URL}/api/wordsets`)
       .then((res) => res.json())
       .then((data) => setWordSets(data));
   };
@@ -81,7 +81,7 @@ function App() {
   const addWords = () => {
     if (!inputText.trim()) return alert("추가할 단어를 입력하세요.");
 
-    fetch("${API_URL}/api/words/bulk", {
+    fetch(`${API_URL}/api/words/bulk`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -175,7 +175,7 @@ function App() {
   const checkAnswer = (selectedAnswer = answer) => {
     if (!selectedAnswer.trim()) return alert("답을 입력하세요.");
 
-    fetch("${API_URL}/api/words/check", {
+    fetch(`${API_URL}/api/words/check`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -270,7 +270,7 @@ function App() {
       return;
     }
 
-    fetch("${API_URL}/api/wordsets", {
+    fetch(`${API_URL}/api/wordsets`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -393,7 +393,7 @@ function App() {
   };
 
   const saveStudyHistory = () => {
-    fetch("${API_URL}/api/histories", {
+    fetch(`${API_URL}/api/histories`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -411,7 +411,7 @@ function App() {
   };
 
   const loadStudyHistories = () => {
-    fetch("${API_URL}/api/histories")
+    fetch(`${API_URL}/api/histories`)
       .then((res) => res.json())
       .then((data) => {
         setStudyHistories(data.slice(0, 50));
@@ -420,7 +420,7 @@ function App() {
   };
 
   const login = () => {
-    fetch("${API_URL}/api/auth/login", {
+    fetch(`${API_URL}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -452,7 +452,7 @@ function App() {
       return;
     }
 
-    fetch("${API_URL}/api/auth/register", {
+    fetch(`${API_URL}/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
