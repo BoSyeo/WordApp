@@ -257,12 +257,14 @@ textarea {
 
 .modeButtons {
   display: flex;
-  gap: 10px;
+  gap: 6px;
 }
 
 .modeButtons button {
   flex: 1;
-  min-width: 0;
+  padding: 10px 6px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .studyNavButtons {
@@ -377,14 +379,8 @@ textarea {
 }
 
 @media (max-width: 480px) {
-  .modeButtons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .modeButtons .primaryBtn {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
+  .modeButtons button {
+    padding: 8px 4px;
+    font-size: 13px;
   }
 }
