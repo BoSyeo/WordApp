@@ -48,6 +48,8 @@ function App() {
 
   const [wordSetSearchText, setWordSetSearchText] = useState("");
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const savedUser = localStorage.getItem("currentUser");
 
@@ -569,22 +571,34 @@ function App() {
     <div className="app">
       <header className="header">
         <h1 onClick={() => setPage("home")}>WordApp</h1>
-        <button onClick={() => setPage("home")}>단어장</button>
-        <button onClick={loadWrongAnswers}>오답노트</button>
-        {isTeacher && (
-          <button onClick={loadStudyHistories}>학습기록</button>
-        )}
-        <span>{currentUser.username} ({currentUser.role})</span>
 
         <button
-          onClick={() => {
-            localStorage.removeItem("currentUser");
-            setCurrentUser(null);
-            setPage("home");
-          }}
+          className="menuBtn"
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          로그아웃
+          ☰
         </button>
+
+        <div className={`navMenu ${menuOpen ? "open" : ""}`}>
+          <button onClick={() => setPage("home")}>단어장</button>
+          <button onClick={loadWrongAnswers}>오답노트</button>
+
+          {isTeacher && (
+            <button onClick={loadStudyHistories}>학습기록</button>
+          )}
+
+          <span>{currentUser.username} ({currentUser.role})</span>
+
+          <button
+            onClick={() => {
+              localStorage.removeItem("currentUser");
+              setCurrentUser(null);
+              setPage("home");
+            }}
+          >
+            로그아웃
+          </button>
+        </div>
       </header>
 
       {page === "home" && (

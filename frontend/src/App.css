@@ -314,3 +314,60 @@ textarea {
   cursor: pointer;
   font-weight: bold;
 }
+
+.menuBtn {
+  display: none;
+  border: none;
+  background: #eef2ff;
+  color: #3b5bdb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    position: relative;
+    padding: 0 18px;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 18px;
+    background: white;
+    flex-direction: column;
+    align-items: stretch;
+    width: 180px;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+  }
+
+  .navMenu.open {
+    display: flex;
+  }
+
+  .navMenu button {
+    width: 100%;
+  }
+
+  .navMenu span {
+    font-size: 13px;
+    text-align: center;
+    color: #666;
+  }
+}
