@@ -18,7 +18,7 @@ public class CorsConfig {
                         .allowedOrigins(
                             "http://localhost:5173",
                             "http://localhost",
-                            "http://EC2공인IP"
+                            "http://3.39.226.111"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
