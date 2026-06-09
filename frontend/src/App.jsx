@@ -483,6 +483,13 @@ function App() {
       });
   };
 
+  const playTts = (text) => {
+    const audio = new Audio(
+      `${API_URL}/api/tts?text=${encodeURIComponent(text)}`
+    );
+    audio.play();
+  };
+
   const isTeacher = currentUser?.role === "TEACHER";
 
   const filteredWordSets = wordSets.filter((wordSet) =>
@@ -804,6 +811,13 @@ function App() {
               </p>
 
               <h1>{studyWords[currentStudyIndex].english}</h1>
+
+              <button
+                className="primaryBtn"
+                onClick={() => playTts(studyWords[currentStudyIndex].english)}
+              >
+                🔊 발음
+              </button>
 
               <h2>{studyWords[currentStudyIndex].korean}</h2>
 
