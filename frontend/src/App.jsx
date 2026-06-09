@@ -810,7 +810,16 @@ function App() {
                 {currentStudyIndex + 1} / {studyWords.length}
               </p>
 
-              <h1>{studyWords[currentStudyIndex].english}</h1>
+              <div className="wordTitleRow">
+                <h1>{studyWords[currentStudyIndex].english}</h1>
+
+                <button
+                  className="ttsBtn"
+                  onClick={() => playTts(studyWords[currentStudyIndex].english)}
+                >
+                  🔊
+                </button>
+              </div>
 
               <h2>{studyWords[currentStudyIndex].korean}</h2>
 
@@ -826,13 +835,6 @@ function App() {
                   }}
                 >
                   {currentStudyIndex === 0 ? "단어장으로" : "이전"}
-                </button>
-
-                <button
-                  className="primaryBtn"
-                  onClick={() => playTts(studyWords[currentStudyIndex].english)}
-                >
-                  🔊 발음
                 </button>
 
                 <button
@@ -879,14 +881,16 @@ function App() {
 
               <p className="sub">다음 단어의 뜻을 입력하세요.</p>
 
-              <h1>{quizWord.english}</h1>
+              <div className="wordTitleRow">
+                <h1>{quizWord.english}</h1>
 
-              <button
-                className="primaryBtn"
-                onClick={() => playTts(quizWord.english)}
-              >
-                🔊 발음
-              </button>
+                <button
+                  className="ttsBtn"
+                  onClick={() => playTts(quizWord.english)}
+                >
+                  🔊
+                </button>
+              </div>
 
               {quizType === "multiple" && !result && (
                 <div className="choiceContainer">
