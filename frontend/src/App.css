@@ -491,4 +491,14 @@ textarea {
     color: #ffffff;
     border: 1px solid #444c56;
   }
+
+  .choiceButton {
+    background: #2d333b;
+    color: #ffffff;
+    border: 1px solid #444c56;
+  }
+
+  .choiceButton:hover {
+    background: #3b424d;
+  }
 }
