@@ -484,9 +484,17 @@ function App() {
   };
 
   const playTts = (text) => {
+    const cleanText = text
+      .replace(/\([^)]*\)/g, "")
+      .replace(/[^a-zA-Z\s'-]/g, "")
+      .trim();
+
+    if (!cleanText) return;
+
     const audio = new Audio(
-      `${API_URL}/api/tts?text=${encodeURIComponent(text)}`
+      `${API_URL}/api/tts?text=${encodeURIComponent(cleanText)}`
     );
+
     audio.play();
   };
 
@@ -500,7 +508,7 @@ function App() {
     return (
       <div className="loginPage">
         <div className="loginBox">
-          <h1>WordApp</h1>
+          <h1>WordZEM</h1>
 
           {authMode === "login" ? (
             <>
@@ -577,7 +585,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1 onClick={() => setPage("home")}>WordApp</h1>
+        <h1 onClick={() => setPage("home")}>WordZEM</h1>
 
         <button
           className="menuBtn"

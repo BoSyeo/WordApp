@@ -12,6 +12,7 @@ import com.wordapp.backend.dto.AnswerCheckResponse;
 import com.wordapp.backend.entity.WrongAnswer;
 import com.wordapp.backend.repository.WrongAnswerRepository;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.wordapp.backend.repository.AppUserRepository;
@@ -59,17 +60,10 @@ public class WordController {
         String correctAnswer = word.getKorean().trim();
         String userAnswer = request.getAnswer().trim();
 
-        boolean correct = false;
-
-        String[] answers = correctAnswer.split("\\s+");
-
-        for(String a : answers){
-
-            if(a.trim().equalsIgnoreCase(userAnswer.trim())){
-                correct = true;
-                break;
-            }
-        }
+        boolean correct = Arrays.stream(correctAnswer.split(","))
+            .map(this::normalizeAnswer)
+            .anyMatch(answer ->
+                    answer.equals(normalizeAnswer(userAnswer)));
 
         if (!correct && !request.isReviewMode()) {
             AppUser user = appUserRepository.findById(request.getUserId())
@@ -95,5 +89,19 @@ public class WordController {
         word.setKorean(updatedWord.getKorean());
 
         return wordRepository.save(word);
+    }
+
+    private String normalizeAnswer(String answer) {
+
+        answer = answer
+                .replace("(명사)", "")
+                .replace("(동사)", "")
+                .replace("(형용사)", "")
+                .replace("(부사)", "");
+
+        return answer
+                .replaceAll("[^가-힣a-zA-Z0-9]", "")
+                .trim()
+                .toLowerCase();
     }
 }

@@ -407,3 +407,47 @@ textarea {
 .ttsBtn:hover {
   transform: scale(1.1);
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: #f8f9fa;
+  }
+
+  .app,
+  .page,
+  .panel,
+  .quizCard,
+  .loginBox {
+    background: #1e1e1e;
+    color: #f8f9fa;
+  }
+
+  h1,
+  h2,
+  h3,
+  strong,
+  p,
+  span {
+    color: #f8f9fa;
+  }
+
+  .sub,
+  small {
+    color: #d0d0d0;
+  }
+
+  input,
+  textarea,
+  select {
+    background: #2a2a2a;
+    color: #ffffff;
+    border-color: #555;
+  }
+
+  .wordItem,
+  .historyItem {
+    background: #2a2a2a;
+    color: #f8f9fa;
+  }
+}
