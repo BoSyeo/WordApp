@@ -409,6 +409,17 @@ textarea {
   transform: scale(1.1);
 }
 
+.loginNotice {
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loginNotice h5 {
+  line-height: 1.6;
+  color: #666;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #121212;
@@ -500,5 +511,9 @@ textarea {
 
   .choiceButton:hover {
     background: #3b424d;
+  }
+
+  .loginNotice h5 {
+    color: #d0d6df;
   }
 }
