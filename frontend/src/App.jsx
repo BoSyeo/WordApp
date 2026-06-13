@@ -508,7 +508,7 @@ function App() {
     return (
       <div className="loginPage">
         <div className="loginBox">
-          <h1>WordZEM</h1>
+          <h1>WordGEM</h1>
 
           {authMode === "login" ? (
             <>
@@ -585,7 +585,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1 onClick={() => setPage("home")}>WordZEM</h1>
+        <h1 onClick={() => setPage("home")}>WordGEM</h1>
 
         <button
           className="menuBtn"
