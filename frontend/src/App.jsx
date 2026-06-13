@@ -359,16 +359,19 @@ function App() {
     });
   };
 
-  const generateChoices = (correctWord, allWords) => {
+  const getFirstMeaning = (meaning) => {
+    return meaning.split(",")[0].trim();
+  };
 
+  const generateChoices = (correctWord, allWords) => {
     const wrongChoices = allWords
       .filter((w) => w.id !== correctWord.id)
       .sort(() => Math.random() - 0.5)
       .slice(0, 3);
 
     const result = [
-      correctWord.korean,
-      ...wrongChoices.map((w) => w.korean),
+      getFirstMeaning(correctWord.korean),
+      ...wrongChoices.map((w) => getFirstMeaning(w.korean)),
     ];
 
     return result.sort(() => Math.random() - 0.5);
