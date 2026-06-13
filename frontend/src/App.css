@@ -390,6 +390,7 @@ textarea {
   justify-content: center;
   align-items: center;
   gap: 8px;
+  margin-bottom: 20px;
 }
 
 .wordTitleRow h1 {
