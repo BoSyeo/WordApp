@@ -461,4 +461,34 @@ textarea {
   .backBtn:hover {
     background: #3b424d;
   }
+
+  .card {
+    background: #1f242c;
+    color: #f8f9fa;
+    border: 1px solid #343a46;
+  }
+
+  .card h3 {
+    color: #ffffff;
+  }
+
+  .card p {
+    color: #d0d6df;
+  }
+
+  .smallSaveBtn {
+    background: #4c6ef5;
+    color: #ffffff;
+  }
+
+  .smallDangerBtn {
+    background: #fa5252;
+    color: #ffffff;
+  }
+
+  .card input {
+    background: #2d333b;
+    color: #ffffff;
+    border: 1px solid #444c56;
+  }
 }
