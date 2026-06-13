@@ -8,8 +8,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        name: "WordApp",
-        short_name: "WordApp",
+        name: "WordGEM",
+        short_name: "WordGEM",
         description: "영단어 학습 앱",
         theme_color: "#3b5bdb",
         background_color: "#f4f6fb",
